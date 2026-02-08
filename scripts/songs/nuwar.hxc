@@ -1,0 +1,9 @@
+import funkin.play.song.Song;
+
+class NuwarSong extends Song
+{
+  function new()
+  {
+    super('nuwar');
+  }
+}
