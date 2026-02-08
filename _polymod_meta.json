@@ -1,0 +1,13 @@
+{
+	"title":"Funkin' Koya",
+	"description":"Friday Night Funkin' with some cool new stories",
+	"contributors": [
+		{
+			"name": "Macohi",
+			"role": "Creator"
+		}
+	],
+	"mod_version":"1.0.0",
+	"api_version":"0.8.1",
+	"license":"CC BY 4.0,MIT"
+}
