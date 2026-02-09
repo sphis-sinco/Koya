@@ -1,9 +1,25 @@
 import funkin.play.song.Song;
+import funkin.play.Countdown;
 
 class NuwarSong extends Song
 {
   function new()
   {
     super('nuwar');
+  }
+
+  public function onCountdownStart(event:CountdownScriptEvent) {
+	super.onCountdownStart(event);
+
+	if ('' + event.step == 'BEFORE')
+	{
+		trace('INIT STUFF HERE');
+	}
+  }
+
+  public function onNoteHit(event:HitNoteScriptEvent) {
+	super.onNoteHit(event);
+	
+	var isPlayer:Bool = Math.floor(event.note.noteData.data / 4) == 0;
   }
 }
