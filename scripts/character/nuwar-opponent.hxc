@@ -1,0 +1,36 @@
+import funkin.play.character.AnimateAtlasCharacter;
+
+class NuwarPlayer extend AnimateAtlasCharacter
+{
+  function new()
+  {
+    super('nuwar-opponent');
+  }
+
+  function onNoteHit(event:HitNoteScriptEvent)
+  {
+    // Override the hit note animation.
+    switch (event.note.kind)
+    {
+      case "Opponent2":
+        // holdTimer = 0;
+        // this.playSingAnimation(event.note.noteData.getDirection(), false, 'joint');
+        return;
+    }
+
+    super.onNoteHit(event);
+  }
+
+  function onNoteMiss(event:NoteScriptEvent)
+  {
+    // Override the miss note animation.
+    switch (event.note.kind)
+    {
+		case "Opponent2":
+			// this.playSingAnimation(event.note.noteData.getDirection(), true, 'bf2');
+			return;
+    }
+
+    super.onNoteMiss(event);
+  }
+}

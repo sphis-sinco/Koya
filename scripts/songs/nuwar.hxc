@@ -20,6 +20,30 @@ class NuwarSong extends Song
   public function onNoteHit(event:HitNoteScriptEvent) {
 	super.onNoteHit(event);
 	
-	var isPlayer:Bool = Math.floor(event.note.noteData.data / 4) == 0;
+	var note = event.note;
+	var isPlayer:Bool = Math.floor(note.noteData.data / 4) == 0;
+
+	switch(note.kind)
+	{
+		case 'Player2', 'BothPlayers':
+			trace('Other Cop Valid');
+		case 'Opponent2', 'BothOpponents':
+			trace('Other Robber Valid');
+	}
+  }
+
+  public function onNoteMiss(event:NoteScriptEvent) {
+	super.onNoteMiss(event);
+	
+	var note = event.note;
+	var isPlayer:Bool = Math.floor(note.noteData.data / 4) == 0;
+
+	switch(note.kind)
+	{
+		case 'Player2', 'BothPlayers':
+			trace('Other Cop Valid');
+		case 'Opponent2', 'BothOpponents':
+			trace('Other Robber Valid');
+	}
   }
 }
